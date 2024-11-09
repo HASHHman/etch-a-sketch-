@@ -1,4 +1,4 @@
-const container = document.querySelector(".container");
+const container = document.querySelector("#container");
 
 function drawGrid(width = 16) {
     container.innerHTML = "";
