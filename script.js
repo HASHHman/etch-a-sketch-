@@ -23,7 +23,6 @@ function drawGrid(width = 16) {
 		const cellSize = Math.floor((containerWidth / width) * 100) / 100;
 		cell.style.width = cellSize + "px";
 		cell.style.height = cellSize + "px";
-		cell.textContent = Math.floor(i / width);
 		container.appendChild(cell);
 	}
 }
