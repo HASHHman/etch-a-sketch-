@@ -1,6 +1,19 @@
 const container = document.querySelector("#container");
 const sizeBtn = document.querySelector("#sizeBtn");
 
+function genRandomRGB() {
+    let randomRGB = "";
+    for (let i = 0; i < 3; i++) {
+        randomRGB = randomRGB + Math.floor(Math.random() * 225);;
+
+        if (i < 2) {
+            randomRGB = randomRGB + ", ";
+        }
+    }
+
+    return "rgb(" + randomRGB + ")";
+}
+
 function drawGrid(width = 16) {
     container.innerHTML = "";
     for (let i = 0; i < width ** 2; i++) {
@@ -17,8 +30,10 @@ function drawGrid(width = 16) {
 
 
 container.addEventListener('mouseover', (event) => {
+
     const div = event.target;
-    div.classList.add("hovered");
+    console.log(genRandomRGB());
+    div.style.backgroundColor = genRandomRGB();
 })
 
 sizeBtn.addEventListener('click', () => {
