@@ -37,7 +37,10 @@ container.addEventListener('mouseover', (event) => {
 })
 
 sizeBtn.addEventListener('click', () => {
-    const wantedSize = Number(prompt("Please enter your preferred grid width:", "16"));
+    let wantedSize = Number(prompt("Please enter your preferred grid width(Max 50):", "16"));
+    while (wantedSize > 50 | wantedSize == null) {
+        wantedSize = Number(prompt("Please enter a value less than 50:", "16"))
+    }
     drawGrid(wantedSize);
 })
 
